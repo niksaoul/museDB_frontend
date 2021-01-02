@@ -3,21 +3,13 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
-const API_KEY = '67bf3190051f1247497ac4120cc86034';
+const API_KEY = '';
 const API_BASE = 'https://api.openweathermap.org/data/2.5/weather';
 
 function MyComponent() {
   const [temperature, setTemperature] = useState(0);
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState("London");
-
-  //  useEffect(() => {
-  //   const apiUrl = 'https://api.github.com/users/hacktivist123/repos';
-  //   // const apiUrl = 'http://drupal-8-9-1.dd:8083/jsonapi/node/article';
-  //   fetch(API_URL)
-  //     .then((response) => response.json())
-  //     .then((data) => setWeatherData(data));
-  // }); 
 
   function refreshData(chosenCity) {
     console.log('refresh temp...');
