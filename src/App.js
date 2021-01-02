@@ -1,25 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import MyComponent from './components/MyComponent'
+import Container from '@material-ui/core/Container';
+import SpotifyPlayer from 'react-spotify-player';
+import MuseumCard from './components/MuseumCard';
+import CardContainer from './components/CardsContainer';
+import ExhibitsContainer from './components/ExhibitsContainer'
 
 function App() {
+  const size = {
+    width: '100%',
+    height: 300,
+  };
+  const view = 'list'; // or 'coverart'
+  const theme = 'black'; // or 'white'
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container 
+      style={{
+        backgroundColor: '#16324F'
+      }}>
+      <ExhibitsContainer />
+      <CardContainer />
+      <MyComponent />
+      {/* <SpotifyPlayer
+        uri="spotify:album:1TIUsv8qmYLpBEhvmBmyBk"
+        size={size}
+        view={view}
+        theme={theme}
+      /> */}
+    </Container>
   );
 }
 
+
+
 export default App;
+
+ 
+
+
