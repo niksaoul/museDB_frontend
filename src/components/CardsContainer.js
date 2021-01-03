@@ -1,19 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import MuseumCard from './MuseumCard';
-import vanGoghImage from '../media/Van-Gogh-Museum.jpg';
-import louvre from '../media/louvre.jpg';
-import acropolis from '../media/acropolis.jpg'
 import Typography from '@material-ui/core/Typography';
-
-
-// var descriptions = ["The Van Gogh Museum is a Dutch art museum dedicated to the works of Vincent van Gogh and his contemporaries in the Museum Square in Amsterdam South.",
-//                     "The Louvre or the Louvre Museum is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement (district or ward). Approximately 38,000 objects from prehistory to the 21st century are exhibited over an area of 72,735 square meters (782,910 square feet).",
-//                     "The Acropolis Museum (Greek: Μουσείο Ακρόπολης, Mouseio Akropolis) is an archaeological museum focused on the findings of the archaeological site of the Acropolis of Athens. The museum was built to house every artifact found on the rock and on the surrounding slopes, from the Greek Bronze Age to Roman and Byzantine Greece. It also lies over the ruins of a part of Roman and early Byzantine Athens."                  
-//                   ]
-
-
-
 
 function CardsContainer() {
   
@@ -57,6 +45,7 @@ React.useEffect(() => {
           description = {museumData.description.substring(0, 150) + "..."}
           imagsrc = {museumData.photo}
           type = {museumData.type}
+          museumID = {museumData.id}
         />
       </Grid>  
     )

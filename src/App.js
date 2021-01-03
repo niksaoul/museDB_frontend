@@ -5,6 +5,9 @@ import SpotifyPlayer from 'react-spotify-player';
 import Nav from './Nav'
 import Museums from './Museums'
 import Exhibitions from './Exhibitions'
+import Creators from './Creators'
+import MuseumPage from './components/pages/MuseumPage'
+import ExhibitPage from './components/pages/ExhibitPage'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 
@@ -26,8 +29,12 @@ function App() {
       <Nav />
       <Switch>
         <Route path="/" exact component={Home} /> 
-        <Route path="/museums" component={Museums} />
-        <Route path="/exhibits" component={Exhibitions} />
+        <Route path="/museums" exact component={Museums} />
+        <Route path="/exhibits" exact component={Exhibitions} />
+        <Route path="/creators" component={Creators} />
+        <Route path="/test" component={MuseumPage} />
+        <Route path="/museums/:id" component={MuseumPage} />
+        <Route path="/exhibits/:id" component={ExhibitPage} />
       </Switch>
       {/*<MyComponent />
        <SpotifyPlayer

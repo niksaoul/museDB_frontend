@@ -5,52 +5,47 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {
-    width: 350,
-    height: 485,
+    width: 280,
+    height: 510,
     backgroundColor: '#18435A'
   },
   media: {
-    height: 260,
+    height: 250,
     paddingTop: '0%', // 16:9,
-    marginTop:'0',
+    marginTop:'10',
   },
   description : {
-    height: 80,
   }
 });
 
-export default function MuseumCard(props) {
+export default function CreatorCard(props) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
-      <CardActionArea component={Link} to={`/museums/${props.museumID}`}>
+      <CardActionArea>
         <CardMedia
           className={classes.media}
-          title={props.title}
+          name={props.name}
           component="img"
           src={props.imagsrc}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" color="textPrimary">
-            {props.title}
+          <Typography gutterBottom variant="h5" component="h2" color="textPrimary" align = "right">
+            {props.name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" className={classes.description}>
-            {props.description} 
+          <Typography variant="body1" align = "left" component="h3" color="Secondary">
+            {props.nationality}
+          </Typography>
+          <Typography variant="body2" align = "justify" color="textSecondary" component="p" className={classes.description}>
+            {props.bio} 
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          ADD TO ARTLIST
-        </Button>
-      </CardActions>
     </Card>
   );
 }
