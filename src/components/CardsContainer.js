@@ -69,7 +69,7 @@ return (
         alignItems="center"
         spacing={1}>
         <Grid container justify='center'>
-          <Typography gutterBottom color="primary" variant="h1" component="h1">
+          <Typography gutterBottom color="textPrimary" variant="h1" component="h1">
             museums.
           </Typography>
         </Grid>
@@ -77,54 +77,6 @@ return (
       </Grid>
   </div>
 )
-
-//   return (
-//     <div>
-//       <Grid container
-//             justify="center"
-//             alignItems="center"
-//             spacing={1}>
-//         <Grid container justify='center'>
-//         <Typography gutterBottom color="primary" variant="h1" component="h1">
-//             museums. 
-//           </Typography>
-//         </Grid>
-//         <Grid container spacing={3} direction='row' justify='center'>
-//             <Grid item spacing={1}>
-//               <MuseumCard 
-//                 title = 'Van Gogh Museum'
-//                 description = {descriptions[0]}
-//                 image = {vanGoghImage}
-//                 />
-//             </Grid>
-//             <Grid item spacing={1}>
-//               <MuseumCard 
-//                 title = 'Louvre Museum' 
-//                 image = {louvre}
-//                 description = {descriptions[1].substring(0, 250) + "..."}
-//               />
-//             </Grid>
-//             <Grid item spacing={1}>
-//               <MuseumCard 
-//                 title = 'Acropolis Museum' 
-//                 image = {acropolis}
-//                 description = {descriptions[2].substring(0, 250) + "..."}
-//               />
-//             </Grid>
-//             <Grid item spacing={1}>
-//               <MuseumCard title = 'Gallery of Modern and Contemporary Art'/>
-//             </Grid>
-//             <Grid item spacing={1}>
-//               <MuseumCard title = 'Gallery of Modern and Contemporary Art'/>
-//             </Grid>
-//             <Grid item spacing={1}>
-//               <MuseumCard title = 'Gallery of Modern and Contemporary Art'/>
-//             </Grid>
-//         </Grid>
-//       </Grid>
-//     </div>
-// );
-
 }
 
 export default CardsContainer;
