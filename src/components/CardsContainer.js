@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import MuseumCard from './MuseumCard';
 import Typography from '@material-ui/core/Typography';
+import {Link} from 'react-router-dom'
 
 function CardsContainer() {
   
@@ -51,6 +52,10 @@ React.useEffect(() => {
     )
   })           
 
+  const linkStyle = {
+    textDecoration: 'none'
+}
+
 return (
   <div>
       <Grid container
@@ -61,6 +66,11 @@ return (
           <Typography gutterBottom color="textPrimary" variant="h1" component="h1">
             museums.
           </Typography>
+          <Link style={linkStyle} to="/addmuseum">
+              <Typography gutterBottom variant="h5" component="h5" color="secondary">
+              are you a museum employee? click here to add your museum's info to our database.
+              </Typography>               
+          </Link>
         </Grid>
         {listitems}
       </Grid>

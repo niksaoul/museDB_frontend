@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import ExhibitCard from './ExhibitCard';
 import monet from '../media/monet.jpg';
 import Typography from '@material-ui/core/Typography';
-
+import { Link } from 'react-router-dom'
 
 const exhibitTest = {
   title: 'Title',
@@ -58,7 +58,11 @@ function CardsContainer() {
           />
         </Grid>  
       )
-    })           
+    })      
+    
+    const linkStyle = {
+      textDecoration: 'none'
+  }
   
   return (
     <div>
@@ -70,6 +74,12 @@ function CardsContainer() {
             <Typography gutterBottom color="textPrimary" variant="h1" component="h1">
               exhibits.
             </Typography>
+            <br/>
+            <Link style={linkStyle} to="/addexhibit">
+              <Typography gutterBottom variant="h5" component="h5" color="secondary">
+                are you a museum employee? please click here to add a new exhibit in our database.    
+              </Typography>                
+            </Link>
           </Grid>
           {listitems}
         </Grid>

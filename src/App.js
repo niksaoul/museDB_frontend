@@ -6,8 +6,12 @@ import Nav from './Nav'
 import Museums from './Museums'
 import Exhibitions from './Exhibitions'
 import Creators from './Creators'
-import MuseumPage from './components/pages/MuseumPage'
-import ExhibitPage from './components/pages/ExhibitPage'
+import MuseumPage from './components/forms/MuseumPage'
+import ExhibitPage from './components/forms/ExhibitPage'
+import AddMuseumPage from './components/forms/AddMuseumPage'
+import AddExhibitPage from './components/forms/AddExhibitPage'
+import MuseumAdded from './components/forms/MuseumAdded'
+import ExhibitAdded from './components/forms/ExhibitAdded'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 
@@ -35,6 +39,10 @@ function App() {
         <Route path="/test" component={MuseumPage} />
         <Route path="/museums/:id" component={MuseumPage} />
         <Route path="/exhibits/:id" component={ExhibitPage} />
+        <Route path="/addmuseum" component={AddMuseumPage} />
+        <Route path="/addexhibit" component={AddExhibitPage} />
+        <Route path="/museumadded" component={MuseumAdded} /> 
+        <Route path="/exhibitadded" component={ExhibitAdded} /> 
       </Switch>
       {/*<MyComponent />
        <SpotifyPlayer
