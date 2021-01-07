@@ -1,6 +1,5 @@
-import './App.css';
 import Container from '@material-ui/core/Container';
-import CreatorsContainer from './components/CreatorsContainer';
+import CreatorsContainer from '../cardsContainers/CreatorsContainer';
 
 function Creators() {
   const size = {
@@ -13,7 +12,7 @@ function Creators() {
   return (
     <Container 
       style={{
-        backgroundColor: '#16324F'
+        backgroundColor: '#E4DFDA'
       }}>
       <CreatorsContainer />
     </Container>

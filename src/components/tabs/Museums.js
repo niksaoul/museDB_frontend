@@ -1,8 +1,7 @@
-import './App.css';
 import Container from '@material-ui/core/Container';
-import ExhibitsContainer from './components/ExhibitsContainer';
+import CardContainer from '../cardsContainers/MuseumsContainer';
 
-function Exhibitions() {
+function Museums() {
   const size = {
     width: '100%',
     height: 300,
@@ -13,16 +12,17 @@ function Exhibitions() {
   return (
     <Container 
       style={{
-        backgroundColor: '#16324F'
+        backgroundColor: '#E4DFDA'
+        // backgroundColor: '#16324F'
       }}>
-      <ExhibitsContainer />
+      <CardContainer />
     </Container>
   );
 }
 
 
 
-export default Exhibitions;
+export default Museums;
 
  
 

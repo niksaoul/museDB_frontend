@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
-import CreatorCard from './CreatorCard';
+import CreatorCard from '../cards/CreatorCard';
 import Typography from '@material-ui/core/Typography';
+import SearchBar from "material-ui-search-bar";
 
 
 function CreatorsContainer() {
@@ -17,6 +18,8 @@ function CreatorsContainer() {
     ]
   
   const [creatorData, setCreatorData] = useState(originalCreator); 
+  const [searchText, setSearchText] = useState("");
+
   console.log(creatorData)
 
   const API_URL = 'http://localhost:3003/creators'
@@ -41,10 +44,11 @@ function CreatorsContainer() {
       return(
         <Grid item spacing={1}>
           <CreatorCard 
+            creatorID = {creatorData.id}
             name = {creatorData.name}
             bio = {creatorData.bio.substring(0, 250) + "..."}
             nationality = {creatorData.nationality}
-            imagsrc = {creatorData.photo}               
+            imagsrc = {creatorData.photo}
           />
         </Grid>  
       )
@@ -56,11 +60,18 @@ function CreatorsContainer() {
           justify="center"
           alignItems="center"
           spacing={2}>
-          <Grid container justify='center'>
-            <Typography gutterBottom color="textPrimary" variant="h1" component="h1">
+          <Grid item spacing={2} xs={12} alignItems="center">
+            <Typography gutterBottom color="textPrimary" variant="h1" component="h1" align="center">
               creators.
             </Typography>
           </Grid>
+          <Grid item spacing={2} xs={10}>
+            <SearchBar
+              value={searchText}
+              onChange={(newValue) => setSearchText(newValue)}
+              onRequestSearch={() => console.log(searchText)}
+            />
+          </Grid> 
           {listitems}
         </Grid>
     </div>

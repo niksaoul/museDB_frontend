@@ -1,18 +1,23 @@
 import './App.css';
-import MyComponent from './components/MyComponent'
 import Container from '@material-ui/core/Container';
-import SpotifyPlayer from 'react-spotify-player';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+// Navigation Bar component
 import Nav from './Nav'
-import Museums from './Museums'
-import Exhibitions from './Exhibitions'
-import Creators from './Creators'
-import MuseumPage from './components/forms/MuseumPage'
-import ExhibitPage from './components/forms/ExhibitPage'
+// Tabs import
+import Museums from './components/tabs/Museums'
+import Exhibitions from './components/tabs/Exhibitions'
+import Creators from './components/tabs/Creators'
+// Pages import
+import MuseumPage from './components/singleComponents/MuseumPage'
+import ExhibitPage from './components/singleComponents/ExhibitPage'
+import CreatorPage from './components/singleComponents/CreatorPage'
+// Add components forms import
 import AddMuseumPage from './components/forms/AddMuseumPage'
 import AddExhibitPage from './components/forms/AddExhibitPage'
-import MuseumAdded from './components/forms/MuseumAdded'
-import ExhibitAdded from './components/forms/ExhibitAdded'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+// Redirection pages import 
+import MuseumAdded from './components/redirectionComponents/MuseumAdded'
+import ExhibitAdded from './components/redirectionComponents/ExhibitAdded'
+
 
 
 function App() {
@@ -28,17 +33,25 @@ function App() {
     <Router>
     <Container 
       style={{
-        backgroundColor: '#16324F'
+        backgroundColor: '#E4DFDA'
+        // backgroundColor: '#16324F'
       }}>
-      <Nav />
+      <Container
+      style={{
+        backgroundColor: '#E4DFDA'
+        // backgroundColor: '#16324F'
+      }}>
+        <Nav />
+      </Container>
       <Switch>
         <Route path="/" exact component={Home} /> 
         <Route path="/museums" exact component={Museums} />
         <Route path="/exhibits" exact component={Exhibitions} />
-        <Route path="/creators" component={Creators} />
-        <Route path="/test" component={MuseumPage} />
+        <Route path="/creators" exact component={Creators} />
+        <Route path="/test" component={AddExhibitPage} />
         <Route path="/museums/:id" component={MuseumPage} />
         <Route path="/exhibits/:id" component={ExhibitPage} />
+        <Route path="/creators/:id" component={CreatorPage} />
         <Route path="/addmuseum" component={AddMuseumPage} />
         <Route path="/addexhibit" component={AddExhibitPage} />
         <Route path="/museumadded" component={MuseumAdded} /> 

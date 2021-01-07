@@ -10,36 +10,29 @@ function Nav() {
         textDecoration: 'none'
     }
 
-    const size = {
-    width: '100%',
-    height: 300,
-    };
-    const view = 'list'; // or 'coverart'
-    const theme = 'black'; // or 'white'
-
     return (
     <nav>
-        <Typography gutterBottom variant="h3" component="h2" color="secondary">
+        <Typography gutterBottom variant="h3" component="h2" color="textSecondary">
         museDB
         </Typography>          
             <ul className = "nav-links">
             <Link style={navStyle} to="/home">
-                <Typography gutterBottom variant="h5" component="h2" color="secondary">
+                <Typography gutterBottom variant="h5" component="h1" color="textSecondary">
                 about.
                 </Typography>               
             </Link>
             <Link style={navStyle} to="/museums">
-                <Typography gutterBottom variant="h5" component="h2" color="secondary">
+                <Typography gutterBottom variant="h5" component="h1" color="textSecondary">
                 museums.
                 </Typography>               
             </Link>
             <Link style={navStyle} to="/exhibits">
-                <Typography gutterBottom variant="h5" component="h2" color="secondary">
+                <Typography gutterBottom variant="h5" component="h1" color="textSecondary">
                 exhibits.
                 </Typography>               
             </Link>
             <Link style={navStyle} to="/creators">
-                <Typography gutterBottom variant="h5" component="h2" color="secondary">
+                <Typography gutterBottom variant="h5" component="h1" color="textSecondary">
                 creators.
                 </Typography>               
             </Link>

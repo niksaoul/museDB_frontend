@@ -8,15 +8,19 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 const theme = createMuiTheme({   
   palette: {      
     primary: {         
-      main: "#FF570A" 
+      // main: "#FF570A" 
+      main: "#C1666B"
       // This is an orange looking color                
     },      
-    secondary: {         
-      main: "#ffcc80" //Another orange-ish color                 
+    secondary: {
+      main: "#E4DFDA"         
+      // main: "#ffcc80" //Another orange-ish color                 
     },
     text: {
-      primary: "#E6EBE0",
-      secondary: "#D7DFCD"
+      // primary: "#E6EBE0",
+      // secondary: "#D7DFCD"
+      primary: "#18435A",
+      secondary: "#7d4e57"
     }            
   }
 });

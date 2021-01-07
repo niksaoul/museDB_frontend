@@ -85,7 +85,7 @@ function AddExhibitPage(props) {
   ];
 
   return (
-    <div style={{ padding: "10px" }}>
+    <div style={{ padding: "40px" }}>
       <Typography gutterBottom color="textPrimary" variant="h1" component="h1">
       add an exhibit.
       </Typography>
@@ -119,10 +119,10 @@ function AddExhibitPage(props) {
           </form>
         </FormProvider>
       </div>
-
+      <br></br>
       <Button
         variant="contained"
-        color="secondary"
+        color="primary"
         onClick={handleSubmit(onSubmit)}
       >
         SUBMIT

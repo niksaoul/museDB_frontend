@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
-import ExhibitCard from './ExhibitCard';
-import monet from '../media/monet.jpg';
+import ExhibitCard from '../cards/ExhibitCard';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom'
+import SearchBar from "material-ui-search-bar";
 
-const exhibitTest = {
-  title: 'Title',
-  description: 'Description',
-  photo: monet
-}
 
 function CardsContainer() {
 
@@ -25,6 +20,8 @@ function CardsContainer() {
     ]
   
   const [exhibitData, setExhibitData] = useState(originalExhibit); 
+  const [searchText, setSearchText] = useState("");
+
   console.log(exhibitData)
 
   const API_URL = 'http://localhost:3003/exhibits'
@@ -54,7 +51,8 @@ function CardsContainer() {
             description = {exhibitData.description.substring(0, 150) + "..."}
             type = {exhibitData.type}
             imagsrc = {exhibitData.photo} 
-            exhibitID = {exhibitData.id}              
+            exhibitID = {exhibitData.id}
+            creatorID = {exhibitData.creatorID}              
           />
         </Grid>  
       )
@@ -70,13 +68,21 @@ function CardsContainer() {
           justify="center"
           alignItems="center"
           spacing={2}>
-          <Grid container justify='center'>
-            <Typography gutterBottom color="textPrimary" variant="h1" component="h1">
+          <Grid item spacing={2} xs={12} alignItems="center">
+            <Typography gutterBottom color="textPrimary" variant="h1" component="h1" align="center">
               exhibits.
             </Typography>
-            <br/>
+          </Grid>
+          <Grid item spacing={2} xs={10}>
+            <SearchBar
+              value={searchText}
+              onChange={(newValue) => setSearchText(newValue)}
+              onRequestSearch={() => console.log(searchText)}
+            />
+          </Grid>   
+          <Grid item spacing={2}>         
             <Link style={linkStyle} to="/addexhibit">
-              <Typography gutterBottom variant="h5" component="h5" color="secondary">
+              <Typography gutterBottom variant="h5" component="h5" color="textSecondary">
                 are you a museum employee? please click here to add a new exhibit in our database.    
               </Typography>                
             </Link>

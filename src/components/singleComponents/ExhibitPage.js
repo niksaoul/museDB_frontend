@@ -36,21 +36,24 @@ const classes = useStyles();
 
 return (
   <div>
-    <Typography gutterBottom color="textPrimary" variant="h1" component="h1">
-      {exhibitData.name}
-    </Typography>
-    <Container maxWidth = 'lg'> 
+    <Container>
+      <Typography gutterBottom color="textPrimary" variant="h1" component="h1">
+        {exhibitData.name}
+      </Typography>
       <Image
         src={exhibitData.photo}
         style={{padding: '300px'}}
+        imageStyle={{height: '500px', width: '100%', padding: '0px'}}
+        style={{height: '500px', width: '100%', padding: '0px'}}
+        cover={true}
       />
+      <Typography gutterBottom color="secondary" variant="h2" component="h2" align="right">
+        {exhibitData.creator}
+      </Typography>
+      <Typography variant="body1" align = "justify" color="textPrimary" component="p" className={classes.description}>
+        {exhibitData.description} 
+      </Typography>
     </Container>
-    <Typography gutterBottom color="secondary" variant="h2" component="h2" align="right">
-      {exhibitData.creator}
-    </Typography>
-    <Typography variant="body1" align = "justify" color="textPrimary" component="p" className={classes.description}>
-      {exhibitData.description} 
-    </Typography>
   </div>
 )
 }
