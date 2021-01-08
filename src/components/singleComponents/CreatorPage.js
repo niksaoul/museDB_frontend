@@ -36,8 +36,7 @@ React.useEffect(() => {
 const classes = useStyles();
 
 return (
-
-<div>
+<div style={{ padding: "40px" }}>
   <Container>
     <Typography gutterBottom color="textPrimary" variant="h1" component="h1" align="left">
       {creatorData.name}
@@ -48,7 +47,7 @@ return (
       imageStyle={{height: '600px', padding: '0px'}}
       style={{height: '600px', padding: '0px'}}
       />
-    <Typography gutterBottom color="secondary" variant="h2" component="h2" align="right">
+    <Typography color="primary" variant="h2" component="h2" align="right">
       {creatorData.nationality}
     </Typography>
     <Typography variant="body1" align = "justify" color="textPrimary" component="p" className={classes.bio}>

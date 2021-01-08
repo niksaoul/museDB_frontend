@@ -35,7 +35,7 @@ React.useEffect(() => {
 const classes = useStyles();
 
 return (
-  <div>
+  <div style={{ padding: "40px" }}>
     <Container>
       <Typography gutterBottom color="textPrimary" variant="h1" component="h1">
         {exhibitData.name}
@@ -47,7 +47,7 @@ return (
         style={{height: '500px', width: '100%', padding: '0px'}}
         cover={true}
       />
-      <Typography gutterBottom color="secondary" variant="h2" component="h2" align="right">
+      <Typography color="primary" variant="h2" component="h2" align="right">
         {exhibitData.creator}
       </Typography>
       <Typography variant="body1" align = "justify" color="textPrimary" component="p" className={classes.description}>

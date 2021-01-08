@@ -69,7 +69,7 @@ function CardsContainer() {
           alignItems="center"
           spacing={2}>
           <Grid item spacing={2} xs={12} alignItems="center">
-            <Typography gutterBottom color="textPrimary" variant="h1" component="h1" align="center">
+            <Typography color="textPrimary" variant="h1" component="h1" align="center">
               exhibits.
             </Typography>
           </Grid>

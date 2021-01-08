@@ -35,8 +35,8 @@ React.useEffect(() => {
 const classes = useStyles();
 
 return (
-  <div>
-  <Container> 
+  <div style={{ padding: "40px" }}>
+    <Container> 
       <Typography gutterBottom color="textPrimary" variant="h1" component="h1">
         {museumData.name}
       </Typography>
@@ -46,13 +46,14 @@ return (
         src={museumData.photo}
         cover={true}
       />
-      <Typography gutterBottom color="secondary" variant="h2" component="h2" align="right">
+      <Typography color="primary" variant="h2" component="h2" align="right">
         {museumData.type}
       </Typography>
       <Typography variant="body1" align = "justify" color="textPrimary" component="p" className={classes.description}>
         {museumData.description} 
       </Typography>
-      <Typography gutterBottom color="secondary" variant="h3" component="h3" align="center">
+      <br></br>
+      <Typography color="primary" variant="h3" component="h3" align="center">
         info
       </Typography>
       <Typography variant="body1" align = "center" color="textSecondary" component="p" className={classes.description}>
