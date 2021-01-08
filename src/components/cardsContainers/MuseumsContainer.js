@@ -23,18 +23,17 @@ const [searchText, setSearchText] = useState("");
 
 // console.log(museumData)
 
-const API_URL = 'http://localhost:3003/museums'
 
 React.useEffect(() => {
+  const allMuseumsURL = 'http://localhost:3003/museums'
   async function fetchMuseumData() {
-    var data = await fetch(API_URL)
+    var data = await fetch(allMuseumsURL)
     .then(res => {
       return res.json();
     })
     .catch((error) => console.log("Error: " + error.message));
-    // console.log('async')
     setMuseumData(data);
-    console.log(museumData[0]);
+    // console.log(museumData[0]);
   }
   fetchMuseumData();
 }, []);
@@ -59,6 +58,18 @@ React.useEffect(() => {
     textDecoration: 'none'
   }
 
+  async function searchMuseums(value) {
+    const allMuseumsURL = `http://localhost:3003/museums?name=${value}`
+    console.log(value)
+    const data = await fetch(allMuseumsURL)
+    .then(res => {
+      return res.json();
+    })
+    .catch((error) => console.log("Error: " + error.message));
+    console.log(data)
+    setMuseumData(data);
+  }
+
 return (
   <div>
     <Grid container
@@ -72,9 +83,12 @@ return (
       </Grid>
       <Grid item spacing={2} xs={10}>
         <SearchBar
-          value={searchText}
-          onChange={(newValue) => setSearchText(newValue)}
-          onRequestSearch={() => console.log(searchText)}
+          onCancelSearch={ () => searchMuseums('') }
+          onChange={(newValue) => { if(newValue === '')
+                                    searchMuseums('')
+                                  }
+                    }
+          onRequestSearch={(value) => {searchMuseums(value)}}
         />
       </Grid>
       <Grid item spacing={2}>

@@ -24,11 +24,11 @@ function CardsContainer() {
 
   console.log(exhibitData)
 
-  const API_URL = 'http://localhost:3003/exhibits'
 
   React.useEffect(() => {
+    const querryAllExhibitsURL = 'http://localhost:3003/exhibits'
     async function fetchExhibitData() {
-      var data = await fetch(API_URL)
+      var data = await fetch(querryAllExhibitsURL)
       .then(res => {
         return res.json();
       })
@@ -62,6 +62,17 @@ function CardsContainer() {
       textDecoration: 'none'
   }
   
+  async function searchExhibits(value) {
+    const allExhibitsURL = `http://localhost:3003/exhibits?name=${value}`
+    console.log(value)
+    const data = await fetch(allExhibitsURL)
+    .then(res => {
+      return res.json();
+    })
+    .catch((error) => console.log("Error: " + error.message));
+    setExhibitData(data);
+  }
+
   return (
     <div>
         <Grid container
@@ -75,9 +86,12 @@ function CardsContainer() {
           </Grid>
           <Grid item spacing={2} xs={10}>
             <SearchBar
-              value={searchText}
-              onChange={(newValue) => setSearchText(newValue)}
-              onRequestSearch={() => console.log(searchText)}
+              onCancelSearch={ () => searchExhibits('') }
+              onChange={(newValue) => { if(newValue === '')
+                                        searchExhibits('')
+                                      }
+                        }
+              onRequestSearch={(value) => {searchExhibits(value)}}
             />
           </Grid>   
           <Grid item spacing={2}>         

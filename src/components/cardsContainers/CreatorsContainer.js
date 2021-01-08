@@ -22,38 +22,46 @@ function CreatorsContainer() {
 
   console.log(creatorData)
 
-  const API_URL = 'http://localhost:3003/creators'
-
   React.useEffect(() => {
+    const querryAllCreatorsURL = 'http://localhost:3003/creators'
     async function fetchCreatorData() {
-      var data = await fetch(API_URL)
+      var data = await fetch(querryAllCreatorsURL)
       .then(res => {
         return res.json();
       })
       .catch((error) => console.log("Error: " + error.message));
-      console.log('async')
       setCreatorData(data);
-      console.log(creatorData[0]);
+      // console.log(creatorData[0]);
     }
     fetchCreatorData();
   }, []);
 
+  async function searchCreators(value) {
+    const allCreatorsURL = `http://localhost:3003/creators?name=${value}`
+    console.log(value)
+    const data = await fetch(allCreatorsURL)
+    .then(res => {
+      return res.json();
+    })
+    .catch((error) => console.log("Error: " + error.message));
+    setCreatorData(data);
+  }
 
-    const listitems = creatorData.map( (creatorData) => 
-    {
-      return(
-        <Grid item spacing={1}>
-          <CreatorCard 
-            creatorID = {creatorData.id}
-            name = {creatorData.name}
-            bio = {creatorData.bio.substring(0, 250) + "..."}
-            nationality = {creatorData.nationality}
-            imagsrc = {creatorData.photo}
-          />
-        </Grid>  
-      )
-    })           
-  
+  const listitems = creatorData.map( (creatorData) => 
+  {
+    return(
+      <Grid item spacing={1}>
+        <CreatorCard 
+          creatorID = {creatorData.id}
+          name = {creatorData.name}
+          bio = {creatorData.bio.substring(0, 250) + "..."}
+          nationality = {creatorData.nationality}
+          imagsrc = {creatorData.photo}
+        />
+      </Grid>  
+    )
+  })           
+
   return (
     <div>
         <Grid container
@@ -67,9 +75,13 @@ function CreatorsContainer() {
           </Grid>
           <Grid item spacing={2} xs={10}>
             <SearchBar
-              value={searchText}
-              onChange={(newValue) => setSearchText(newValue)}
-              onRequestSearch={() => console.log(searchText)}
+              // value={searchText}
+              onCancelSearch={ () => searchCreators('') }
+              onChange={(newValue) => { if(newValue === '')
+                                          searchCreators('')
+                                      }
+                        }
+              onRequestSearch={(value) => {searchCreators(value)}}
             />
           </Grid> 
           {listitems}
