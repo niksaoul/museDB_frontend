@@ -94,9 +94,9 @@ function CardsContainer() {
               onRequestSearch={(value) => {searchExhibits(value)}}
             />
           </Grid>   
-          <Grid item spacing={2}>         
+          <Grid item spacing={2} xs={12}>         
             <Link style={linkStyle} to="/addexhibit">
-              <Typography gutterBottom variant="h5" component="h5" color="textSecondary">
+              <Typography gutterBottom variant="h5" component="h5" color="textSecondary" align="center">
                 are you a museum employee? please click here to add a new exhibit in our database.    
               </Typography>                
             </Link>

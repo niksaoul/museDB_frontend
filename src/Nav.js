@@ -12,11 +12,13 @@ function Nav() {
 
     return (
     <nav>
-        <Typography gutterBottom variant="h3" component="h2" color="textSecondary">
-        museDB
-        </Typography>          
+        <Link style={navStyle} to="/">
+            <Typography gutterBottom variant="h3" component="h1" color="textSecondary">
+            museDB
+            </Typography>               
+        </Link>        
             <ul className = "nav-links">
-            <Link style={navStyle} to="/home">
+            <Link style={navStyle} to="/about">
                 <Typography gutterBottom variant="h5" component="h1" color="textSecondary">
                 about.
                 </Typography>               

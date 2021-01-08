@@ -22,8 +22,17 @@ const theme = createMuiTheme({
       primary: "#18435A",
       secondary: "#7d4e57"
     }            
-  }
-});
+  },
+  typography: {
+    fontFamily: ['Vollkorn', '"Abril Fatface"', 'Open Sans'].join(','), 
+      h1: {
+        fontFamily: ['Vollkorn', '"Abril Fatface"', 'Open Sans'].join(',')
+      },
+      h5: {
+        fontFamily: ['Vollkorn', '"Abril Fatface"', 'Open Sans'].join(',')
+      }
+    }
+  });
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>

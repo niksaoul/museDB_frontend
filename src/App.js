@@ -7,6 +7,8 @@ import Nav from './Nav'
 import Museums from './components/tabs/Museums'
 import Exhibitions from './components/tabs/Exhibitions'
 import Creators from './components/tabs/Creators'
+import HomePage from './components/tabs/HomePage'
+import AboutPage from './components/tabs/AboutPage'
 // Pages import
 import MuseumPage from './components/singleComponents/MuseumPage'
 import ExhibitPage from './components/singleComponents/ExhibitPage'
@@ -44,7 +46,8 @@ function App() {
         <Nav />
       </Container>
       <Switch>
-        <Route path="/" exact component={Home} /> 
+        <Route path="/" exact component={HomePage} />
+        <Route path="/about" exact component={AboutPage} /> 
         <Route path="/museums" exact component={Museums} />
         <Route path="/exhibits" exact component={Exhibitions} />
         <Route path="/creators" exact component={Creators} />
@@ -57,24 +60,11 @@ function App() {
         <Route path="/museumadded" component={MuseumAdded} /> 
         <Route path="/exhibitadded" component={ExhibitAdded} /> 
       </Switch>
-      {/*<MyComponent />
-       <SpotifyPlayer
-        uri="spotify:album:1TIUsv8qmYLpBEhvmBmyBk"
-        size={size}
-        view={view}
-        theme={theme}
-      /> */}
     </Container>
     </Router>
     </div>
   );
 }
-
-const Home = () => (
-  <div>
-    <h1>Home Page</h1>
-  </div>
-);
 
 
 export default App;
